@@ -1,0 +1,11 @@
+/* ==|=======================================================================
+   SASS Function - calculate-em
+   Calculates the em value on pixel basis.
+
+   @param $target-px | string | The pixel value of the element.
+   @param $context | string | The pixel value of the context element.
+   ========================================================================== */
+
+@function calculate-em($target-px, $context) {
+	@return ($target-px / $context) * 1em;
+}
