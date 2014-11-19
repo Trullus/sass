@@ -2,16 +2,16 @@
    SASS Mixin - create-css-triangle
    Creates a CSS 3 triangle.
 
-   @param $class-name			string		The class name of the created triangle.
-   @param $direction			string		The direction the triangle should be facing.
-   @param $width				string		The width of the triangle.
-   @param $height				string		The height of the triangle.
-   @param $background-color		string		The color of the triangle.
-   @param $border-width			string		The border width of the triangle.
-   @param $border-color			string		The color of the border of the triangle.
-   @param $offset-x				string		The x offset of the triangle.
-   @param $offset-y				string		The y offset of the triangle.
-   @param $z-index				string		The z-index of the triangle.
+   @param $class-name | string | The class name of the created triangle.
+   @param $direction | string | The direction the triangle should be facing.
+   @param $width | string | The width of the triangle.
+   @param $height | string | The height of the triangle.
+   @param $background-color | string | The color of the triangle.
+   @param $border-width | string | The border width of the triangle.
+   @param $border-color | string | The color of the border of the triangle.
+   @param $offset-x | string | The x offset of the triangle.
+   @param $offset-y | string | The y offset of the triangle.
+   @param $z-index | string | The z-index of the triangle.
    ========================================================================== */
 
 @mixin create-css-triangle($class-name, $direction, $width, $height, $background-color: transparent, $border-width: 0, $border-color: transparent, $offset-x: 0, $offset-y: 0, $z-index: -99) {
@@ -26,15 +26,15 @@
    SASS Mixin - attach-css-triangle
    Attaches a CSS 3 triangle to an existing class.
 
-   @param $direction			string		The direction the triangle should be facing.
-   @param $width				string		The width of the triangle.
-   @param $height				string		The height of the triangle.
-   @param $background-color		string		The color of the triangle.
-   @param $border-width			string		The border width of the triangle.
-   @param $border-color			string		The color of the border of the triangle.
-   @param $offset-x				string		The x offset of the triangle.
-   @param $offset-y				string		The y offset of the triangle.
-   @param $z-index				string		The z-index of the triangle.
+   @param $direction | string | The direction the triangle should be facing.
+   @param $width | string | The width of the triangle.
+   @param $height | string | The height of the triangle.
+   @param $background-color | string | The color of the triangle.
+   @param $border-width | string | The border width of the triangle.
+   @param $border-color | string | The color of the border of the triangle.
+   @param $offset-x | string | The x offset of the triangle.
+   @param $offset-y | string | The y offset of the triangle.
+   @param $z-index | string | The z-index of the triangle.
    ========================================================================== */
 
 @mixin attach-css-triangle($direction, $width, $height, $background-color: transparent, $border-width: 0, $border-color: transparent, $offset-x: undefined, $offset-y: undefined, $z-index: -99) {
