@@ -2,12 +2,12 @@
    SASS Mixin - create-responsive-grid
    Creates all required classes for a responsive grid.
 
-   @param $gridsize						string		The width of the complete grid.
-   @param $column-width					string		The width of each column in the grid.
-   @param $offset						string		The width of the offset after each grid.
-   @param $default-resolution			bool		Is the grid for the default resolution?
-   @param $include-tablet-exceptions	bool		Should tablet exceptions be included in this grid?
-   @param $include-mobile-exceptions	bool		Should mobile exceptions be included in this grid?
+   @param $gridsize | string | The width of the complete grid.
+   @param $column-width | string | The width of each column in the grid.
+   @param $offset | string | The width of the offset after each grid.
+   @param $default-resolution | bool | Is the grid for the default resolution?
+   @param $include-tablet-exceptions | bool | Should tablet exceptions be included in this grid?
+   @param $include-mobile-exceptions | bool | Should mobile exceptions be included in this grid?
    ========================================================================== */
 
 @mixin create-responsive-grid($gridsize, $column-width, $offset, $default-resolution, $include-tablet-exceptions, $include-mobile-exceptions) {
@@ -33,7 +33,7 @@
 
 			.span12 {
 				margin-left: $offset;
-				width: calculateSpanWidth(12, $column-width, $offset);
+				width: calculate-span-width(12, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -43,7 +43,7 @@
 
 			.span11 {
 				margin-left: $offset;
-				width: calculateSpanWidth(11, $column-width, $offset);
+				width: calculate-span-width(11, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -53,7 +53,7 @@
 
 			.span10 {
 				margin-left: $offset;
-				width: calculateSpanWidth(10, $column-width, $offset);
+				width: calculate-span-width(10, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -63,7 +63,7 @@
 
 			.span9 {
 				margin-left: $offset;
-				width: calculateSpanWidth(9, $column-width, $offset);
+				width: calculate-span-width(9, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -73,7 +73,7 @@
 
 			.span8 {
 				margin-left: $offset;
-				width: calculateSpanWidth(8, $column-width, $offset);
+				width: calculate-span-width(8, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -83,7 +83,7 @@
 
 			.span7 {
 				margin-left: $offset;
-				width: calculateSpanWidth(7, $column-width, $offset);
+				width: calculate-span-width(7, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -93,7 +93,7 @@
 
 			.span6 {
 				margin-left: $offset;
-				width: calculateSpanWidth(6, $column-width, $offset);
+				width: calculate-span-width(6, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -102,7 +102,7 @@
 			}
 			.span5 {
 				margin-left: $offset;
-				width: calculateSpanWidth(5, $column-width, $offset);
+				width: calculate-span-width(5, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -112,7 +112,7 @@
 
 			.span4 {
 				margin-left: $offset;
-				width: calculateSpanWidth(4, $column-width, $offset);
+				width: calculate-span-width(4, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -122,7 +122,7 @@
 
 			.span3 {
 				margin-left: $offset;
-				width: calculateSpanWidth(3, $column-width, $offset);
+				width: calculate-span-width(3, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -132,7 +132,7 @@
 
 			.span2 {
 				margin-left: $offset;
-				width: calculateSpanWidth(2, $column-width, $offset);
+				width: calculate-span-width(2, $column-width, $offset);
 
 				@if $default-resolution {
 					float: left;
@@ -150,50 +150,50 @@
 
 			}
 
-			.offset12 { margin-left: calculateOffsetWidth(12, $column-width, $offset); }
-			.offset11 { margin-left: calculateOffsetWidth(11, $column-width, $offset); }
-			.offset10 { margin-left: calculateOffsetWidth(10, $column-width, $offset); }
-			.offset9 { margin-left: calculateOffsetWidth(9, $column-width, $offset); }
-			.offset8 { margin-left: calculateOffsetWidth(8, $column-width, $offset); }
-			.offset7 { margin-left: calculateOffsetWidth(7, $column-width, $offset); }
-			.offset6 { margin-left: calculateOffsetWidth(6, $column-width, $offset); }
-			.offset5 { margin-left: calculateOffsetWidth(5, $column-width, $offset); }
-			.offset4 { margin-left: calculateOffsetWidth(4, $column-width, $offset); }
-			.offset3 { margin-left: calculateOffsetWidth(3, $column-width, $offset); }
-			.offset2 { margin-left: calculateOffsetWidth(2, $column-width, $offset); }
-			.offset1 { margin-left: calculateOffsetWidth(1, $column-width, $offset); }
+			.offset12 { margin-left: calculate-offset-width(12, $column-width, $offset); }
+			.offset11 { margin-left: calculate-offset-width(11, $column-width, $offset); }
+			.offset10 { margin-left: calculate-offset-width(10, $column-width, $offset); }
+			.offset9 { margin-left: calculate-offset-width(9, $column-width, $offset); }
+			.offset8 { margin-left: calculate-offset-width(8, $column-width, $offset); }
+			.offset7 { margin-left: calculate-offset-width(7, $column-width, $offset); }
+			.offset6 { margin-left: calculate-offset-width(6, $column-width, $offset); }
+			.offset5 { margin-left: calculate-offset-width(5, $column-width, $offset); }
+			.offset4 { margin-left: calculate-offset-width(4, $column-width, $offset); }
+			.offset3 { margin-left: calculate-offset-width(3, $column-width, $offset); }
+			.offset2 { margin-left: calculate-offset-width(2, $column-width, $offset); }
+			.offset1 { margin-left: calculate-offset-width(1, $column-width, $offset); }
 
 			@if $include-tablet-exceptions {
 
-				.tspan12 { width: calculateSpanWidth(12, $column-width, $offset); }
-				.tspan11 { width: calculateSpanWidth(11, $column-width, $offset); }
-				.tspan10 { width: calculateSpanWidth(10, $column-width, $offset); }
-				.tspan9 { width: calculateSpanWidth(9, $column-width, $offset); }
-				.tspan8 { width: calculateSpanWidth(8, $column-width, $offset); }
-				.tspan7 { width: calculateSpanWidth(7, $column-width, $offset); }
-				.tspan6 { width: calculateSpanWidth(6, $column-width, $offset); }
-				.tspan5 { width: calculateSpanWidth(5, $column-width, $offset); }
-				.tspan4 { width: calculateSpanWidth(4, $column-width, $offset); }
-				.tspan3 { width: calculateSpanWidth(3, $column-width, $offset); }
-				.tspan2 { width: calculateSpanWidth(2, $column-width, $offset); }
-				.tspan1 { width: calculateSpanWidth(1, $column-width, $offset); }
+				.tspan12 { width: calculate-span-width(12, $column-width, $offset); }
+				.tspan11 { width: calculate-span-width(11, $column-width, $offset); }
+				.tspan10 { width: calculate-span-width(10, $column-width, $offset); }
+				.tspan9 { width: calculate-span-width(9, $column-width, $offset); }
+				.tspan8 { width: calculate-span-width(8, $column-width, $offset); }
+				.tspan7 { width: calculate-span-width(7, $column-width, $offset); }
+				.tspan6 { width: calculate-span-width(6, $column-width, $offset); }
+				.tspan5 { width: calculate-span-width(5, $column-width, $offset); }
+				.tspan4 { width: calculate-span-width(4, $column-width, $offset); }
+				.tspan3 { width: calculate-span-width(3, $column-width, $offset); }
+				.tspan2 { width: calculate-span-width(2, $column-width, $offset); }
+				.tspan1 { width: calculate-span-width(1, $column-width, $offset); }
 
 			}
 
 			@if $include-mobile-exceptions {
 
-				.mspan12 { width: calculateSpanWidth(12, $column-width, $offset); }
-				.mspan11 { width: calculateSpanWidth(11, $column-width, $offset); }
-				.mspan10 { width: calculateSpanWidth(10, $column-width, $offset); }
-				.mspan9 { width: calculateSpanWidth(9, $column-width, $offset); }
-				.mspan8 { width: calculateSpanWidth(8, $column-width, $offset); }
-				.mspan7 { width: calculateSpanWidth(7, $column-width, $offset); }
-				.mspan6 { width: calculateSpanWidth(6, $column-width, $offset); }
-				.mspan5 { width: calculateSpanWidth(5, $column-width, $offset); }
-				.mspan4 { width: calculateSpanWidth(4, $column-width, $offset); }
-				.mspan3 { width: calculateSpanWidth(3, $column-width, $offset); }
-				.mspan2 { width: calculateSpanWidth(2, $column-width, $offset); }
-				.mspan1 { width: calculateSpanWidth(1, $column-width, $offset); }
+				.mspan12 { width: calculate-span-width(12, $column-width, $offset); }
+				.mspan11 { width: calculate-span-width(11, $column-width, $offset); }
+				.mspan10 { width: calculate-span-width(10, $column-width, $offset); }
+				.mspan9 { width: calculate-span-width(9, $column-width, $offset); }
+				.mspan8 { width: calculate-span-width(8, $column-width, $offset); }
+				.mspan7 { width: calculate-span-width(7, $column-width, $offset); }
+				.mspan6 { width: calculate-span-width(6, $column-width, $offset); }
+				.mspan5 { width: calculate-span-width(5, $column-width, $offset); }
+				.mspan4 { width: calculate-span-width(4, $column-width, $offset); }
+				.mspan3 { width: calculate-span-width(3, $column-width, $offset); }
+				.mspan2 { width: calculate-span-width(2, $column-width, $offset); }
+				.mspan1 { width: calculate-span-width(1, $column-width, $offset); }
 
 			}
 
@@ -201,4 +201,30 @@
 
 	}
 
+}
+
+/* ==|=======================================================================
+   SASS Function - calculate-span-width
+   Calculates the total span width of a column.
+
+   @param $size | string | The position of the column.
+   @param $column-width | string | The width of the column.
+   @param $offset | string | The width of the offset after the column.
+   ========================================================================== */
+
+@function calculate-span-width($size, $column-width, $offset) {
+	@return $column-width * $size + $offset * ($size - 1);
+}
+
+/* ==|=======================================================================
+   SASS Function - calculate-offset-width
+   Calculates the total span width of the offset.
+
+   @param $size | string | The position of the offset.
+   @param $column-width | string | The width of the column.
+   @param $offset | string | The width of the offset after the column.
+   ========================================================================== */
+
+@function calculate-offset-width($size, $column-width, $offset) {
+	@return (($column-width + $offset) * $size) + $offset;
 }
