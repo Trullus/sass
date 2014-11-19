@@ -1,0 +1,137 @@
+/* ==|=======================================================================
+   SASS Mixin - create-css-triangle
+   Creates a CSS 3 triangle.
+
+   @param $class-name			string		The class name of the created triangle.
+   @param $direction			string		The direction the triangle should be facing.
+   @param $width				string		The width of the triangle.
+   @param $height				string		The height of the triangle.
+   @param $background-color		string		The color of the triangle.
+   @param $border-width			string		The border width of the triangle.
+   @param $border-color			string		The color of the border of the triangle.
+   @param $offset-x				string		The x offset of the triangle.
+   @param $offset-y				string		The y offset of the triangle.
+   @param $z-index				string		The z-index of the triangle.
+   ========================================================================== */
+
+@mixin create-css-triangle($class-name, $direction, $width, $height, $background-color: transparent, $border-width: 0, $border-color: transparent, $offset-x: 0, $offset-y: 0, $z-index: -99) {
+
+	.#{$class-name} {
+		@include attach-css-triangle($direction, $width, $height, $background-color, $border-width, $border-color, $offset-x, $offset-y);
+	}
+
+}
+
+/* ==|=======================================================================
+   SASS Mixin - attach-css-triangle
+   Attaches a CSS 3 triangle to an existing class.
+
+   @param $direction			string		The direction the triangle should be facing.
+   @param $width				string		The width of the triangle.
+   @param $height				string		The height of the triangle.
+   @param $background-color		string		The color of the triangle.
+   @param $border-width			string		The border width of the triangle.
+   @param $border-color			string		The color of the border of the triangle.
+   @param $offset-x				string		The x offset of the triangle.
+   @param $offset-y				string		The y offset of the triangle.
+   @param $z-index				string		The z-index of the triangle.
+   ========================================================================== */
+
+@mixin attach-css-triangle($direction, $width, $height, $background-color: transparent, $border-width: 0, $border-color: transparent, $offset-x: undefined, $offset-y: undefined, $z-index: -99) {
+
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+
+		@if $offset-x != undefined and $offset-y != undefined {
+
+			left: $offset-x;
+			top: $offset-y;
+
+		} @else {
+
+			@if $direction == "down" {
+				bottom: -$height;
+			} @else if $direction == "up" {
+				top: -$height;
+			} @else if $direction == "left" {
+				left: -$width;
+			} @else if $direction == "right" {
+				right: -$width;
+			}
+
+			@if $direction == "down" or $direction == "up" {
+				@if $offset-x != undefined {
+					left: $offset-x;
+				} @else {
+					left: 0;
+				}
+			} @else if $direction == "left" or $direction == "right" {
+				@if $offset-y != undefined {
+					top: $offset-y;
+				} @else {
+					top: 0;
+				}
+			}
+
+		}
+
+	}
+
+	&:after {
+		z-index: $z-index;
+
+		@if $direction == "down" or $direction == "up" {
+			border-left: ($width / 2) solid transparent;
+			border-right: ($width / 2) solid transparent;
+		} @else if $direction == "left" or $direction == "right" {
+			border-top: ($height / 2) solid transparent;
+			border-bottom: ($height / 2) solid transparent;
+		}
+
+		@if $direction == "down" {
+			border-top: $height solid $background-color;
+		} @else if $direction == "up" {
+			border-bottom: $height solid $background-color;
+		} @else if $direction == "left" {
+			border-right: $width solid $background-color;
+		} @else if $direction == "right" {
+			border-left: $width solid $background-color;
+		}
+
+	}
+
+	@if $border-width > 0 {
+
+		&:before {
+			z-index: $z-index;
+
+			@if $direction == "down" or $direction == "up" {
+				border-left: ($width / 2 + $border-width) solid transparent;
+				border-right: ($width / 2 + $border-width) solid transparent;
+			} @else if $direction == "left" or $direction == "right" {
+				border-top: ($height / 2 + $border-width) solid transparent;
+				border-bottom: ($height / 2 + $border-width) solid transparent;
+			}
+
+			@if $direction == "down" {
+				border-top: ($height + $border-width) solid $border-color;
+				margin: 0 0 (-$border-width) (-$border-width);
+			} @else if $direction == "up" {
+				border-bottom: ($height + $border-width) solid $border-color;
+				margin: (-$border-width) 0 0 (-$border-width);
+			} @else if $direction == "left" {
+				border-right: ($width + $border-width) solid $border-color;
+				margin: (-$border-width) 0 0 (-$border-width);
+			} @else if $direction == "right" {
+				border-left: ($width + $border-width) solid $border-color;
+				margin: (-$border-width) (-$border-width) 0 0;
+			}
+
+		}
+
+	}
+
+}
